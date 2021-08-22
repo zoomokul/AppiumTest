@@ -100,7 +100,20 @@ public static void main(String[] args) throws IOException, Exception{
 		    Thread.sleep(3000);
 		    driver.findElementById("com.foreks.android.epias:id/layoutEpiasTopSelectionView_imageViewDate").click();
 		    
-		    Thread.sleep(3000);
+		    WebElement allDate=driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout");
+		    Dimension allDateDimension=allDate.getSize();
+		     
+		    int start_x=(int)(allDateDimension.height*0.5);
+		    int start_y=(int)(allDateDimension.height*0.8);
+		    int end_x=(int)(allDateDimension.width*0.5);
+		    int end_y=(int)(allDateDimension.width*0.2);
+		     
+		    TouchAction touchAction=new TouchAction(driver);
+		    touchAction.press(PointOption.point(start_x,start_y)).
+		            waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).
+		            moveTo(PointOption.point(end_x,end_y)).release().perform();
+		    
+		    Thread.sleep(2000);
 		  
 		    //Tamam týklandý
 		    driver.findElementById("com.foreks.android.epias:id/layoutFilterDateTime_textView_ok").click(); 
@@ -143,18 +156,22 @@ public static void main(String[] args) throws IOException, Exception{
         		driver1.manage().timeouts().implicitlyWait(15,TimeUnit.SECONDS);
         		driver1.get(url2);
         		driver1.findElementByXPath("(//a[@class='internal sign-in-link'])[2]").click();
-        		driver1.findElementById("i0116").sendKeys("ahmet.bayar@windowslive.com");
+        		driver1.findElementById("i0116").sendKeys("tester81@outlook.com.tr");
         		driver1.findElementById("idSIButton9").click();
-        		driver1.findElementById("i0118").sendKeys("");
+        		driver1.findElementById("i0118").sendKeys("Ankara06");
         		Thread.sleep(3000);
         		driver1.findElementByXPath("//input[@type='submit']").click();
         		driver1.findElementById("idBtn_Back").click();
         		Thread.sleep(3000);
-        		driver1.findElementByXPath("//button[@class='ms-Button GJoz3Svb7GjPbATIMTlpL _2W_XxC_p1PufyiP8wuAvwF lZNvAQjEfdlNWkGGuJb7d ms-Button--commandBar PleNk7rXi9dhw_-rxCXnh root-101']").click();
-        		driver1.findElementByXPath("//input[@autocapitalize='off']").sendKeys("analyst.team@smartpulse.io");
-        		driver1.findElementById("TextField229").sendKeys("test amaçlý"+Keys.TAB+ort);
-        		driver1.findElementByXPath("//button[@class='ms-Button ms-Button--primary ms-Button--hasMenu _3BlbI7rjg2J-d7fY98r7tp _3aJ_30-S6Xl7nZRnkPaTOF root-221']").click();
-        		driver1.close();
+        		driver1.findElementByXPath("//button[@class='ms-Button GJoz3Svb7GjPbATIMTlpL _2W_XxC_p1PufyiP8wuAvwF lZNvAQjEfdlNWkGGuJb7d ms-Button--commandBar PleNk7rXi9dhw_-rxCXnh root-97']").click();
+        		String metin="PTF ortalamasý: "+ort;
+        		driver1.findElementByXPath("//input[@autocapitalize='off']").sendKeys("isogretmen2018@gmail.com"+Keys.TAB+Keys.TAB+Keys.TAB+"Ahmet BAYAR"+Keys.TAB+metin);
+        		//String metin="PTF ortalamasý: "+ort;
+        		
+
+        		Thread.sleep(3000);
+        		driver1.findElementByXPath("//div[@class='css-213']").click();
+        		//driver1.close();
 
 	}
 
