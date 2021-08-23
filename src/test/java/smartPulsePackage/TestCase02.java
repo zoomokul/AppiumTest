@@ -44,10 +44,10 @@ public static void main(String[] args) throws IOException, Exception{
 		        
 		        String path="	\r\n"
 		        		+ "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.ImageView";
-		        // Türkçe menü þecildi.
+		        // TÃ¼rkÃ§e menÃ¼ Ã¾ecildi.
 		        driver.findElementByXPath(path).click();
 		        
-		        // Tamam týklandý
+		        // Tamam tÃ½klandÃ½
 		        driver.findElementById("com.foreks.android.epias:id/dialogEpiasLanguage_textView_ok").click();
 		        
 
@@ -68,18 +68,18 @@ public static void main(String[] args) throws IOException, Exception{
 					.release().perform();
 			}
 		       
-		     // devam týklandý.  
+		     // devam tÃ½klandÃ½.  
 		    driver.findElementById("com.foreks.android.epias:id/layoutOnboarding_textView_continue").click();
 		    
-		    // Ana menu týklandý
+		    // Ana menu tÃ½klandÃ½
 		    driver.findElementById("com.foreks.android.epias:id/fragmentHome_imageView_menu").click();
 		    
-		    //Menü deki tüm elemanlar listeye atýldý
+		    //MenÃ¼ deki tÃ¼m elemanlar listeye atÃ½ldÃ½
 		    List<WebElement> menu=driver.findElementsByClassName("android.widget.TextView");
 		    
 		   
 		    
-		    // Tüm elemanlardan piyasalar týklandý
+		    // TÃ¼m elemanlardan piyasalar tÃ½klandÃ½
 		    for (WebElement each : menu) {
 			   
 			   if (each.getText().equalsIgnoreCase("Piyasalar")) {
@@ -94,7 +94,7 @@ public static void main(String[] args) throws IOException, Exception{
 		   
 		    String ptfxPath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[5]/android.widget.TextView";
 		    
-		    // PTF týklandý
+		    // PTF tÃ½klandÃ½
 		    driver.findElementByXPath(ptfxPath).click();
 		    
 		    Thread.sleep(3000);
@@ -115,21 +115,21 @@ public static void main(String[] args) throws IOException, Exception{
 		    
 		    Thread.sleep(2000);
 		  
-		    //Tamam týklandý
+		    //Tamam tÃ½klandÃ½
 		    driver.findElementById("com.foreks.android.epias:id/layoutFilterDateTime_textView_ok").click(); 
 		   
 		  
 		    Thread.sleep(3000);
 		    
-		    //Alt Menü deki tüm elemanlar listeye atýldý
+		    //Alt MenÃ¼ deki tÃ¼m elemanlar listeye atÃ½ldÃ½
 		    List<WebElement> altmenuler=driver.findElementsByClassName("android.widget.TextView");
 		    
 
 		    
-		    // Tüm elemanlardan piyasalar týklandý
+		    // TÃ¼m elemanlardan piyasalar tÃ½klandÃ½
 		    for (WebElement each : altmenuler) {
 			   
-			   if (each.getText().equalsIgnoreCase("Günlük")) {
+			   if (each.getText().equalsIgnoreCase("GÃ¼nlÃ¼k")) {
 				   each.click();
 				   break;
 				
@@ -145,7 +145,7 @@ public static void main(String[] args) throws IOException, Exception{
 		    		+ "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[3]/android.widget.TextView[1]";
 		    
 		    
-		    // Ortalama konsola yazdýrýldý
+		    // Ortalama konsola yazdÃ½rÃ½ldÃ½
 		    String ort=driver.findElementByXPath(ortlamaXpath).getText();
 		    System.out.println(driver.findElementByXPath(ortlamaXpath).getText());
 
@@ -164,9 +164,9 @@ public static void main(String[] args) throws IOException, Exception{
         		driver1.findElementById("idBtn_Back").click();
         		Thread.sleep(3000);
         		driver1.findElementByXPath("//button[@class='ms-Button GJoz3Svb7GjPbATIMTlpL _2W_XxC_p1PufyiP8wuAvwF lZNvAQjEfdlNWkGGuJb7d ms-Button--commandBar PleNk7rXi9dhw_-rxCXnh root-97']").click();
-        		String metin="PTF ortalamasý: "+ort;
-        		driver1.findElementByXPath("//input[@autocapitalize='off']").sendKeys("isogretmen2018@gmail.com"+Keys.TAB+Keys.TAB+Keys.TAB+"Ahmet BAYAR"+Keys.TAB+metin);
-        		//String metin="PTF ortalamasý: "+ort;
+        		String metin="PTF ortalamasÃ½: "+ort;
+        		driver1.findElementByXPath("//input[@autocapitalize='off']").sendKeys("analyst.team@smartpulse.io"+Keys.TAB+Keys.TAB+Keys.TAB+"Ahmet BAYAR"+Keys.TAB+metin);
+        		//String metin="PTF ortalamasÃ½: "+ort;
         		
 
         		Thread.sleep(3000);
